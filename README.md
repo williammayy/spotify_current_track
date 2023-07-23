@@ -12,6 +12,6 @@ Setup:
     - export SPOTIPY_REDIRECT_URI='http://localhost/'
 
   run the python script: 
-  python3 main.py 
+  python3 app.py 
   this will open a window to log in your spotify account and grant permission to the app;
   paste the redirected url on terminal, url exemple: 'http://localhost/?code=xxxxxx';
