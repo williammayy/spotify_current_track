@@ -11,6 +11,6 @@ if results:
     album = results['item']['album']['name']
     artists = results['item']['artists'][0]['name']
     album_cover = results['item']['album']['images'][0]['url']
-    print(f"{track}, {artists} - {artists} \n{album_cover}")
+    print(f"{track}, {artists} - {album} \n{album_cover}")
 else:
     print("Nothing is playing...")
