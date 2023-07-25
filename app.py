@@ -35,6 +35,7 @@ root.config(cursor='none')
 
 while True:
     results = sp.current_playback()
+    time.sleep(1)
     if results is None:
         current_song = 'none'
         if previous_song != current_song:
@@ -61,4 +62,4 @@ while True:
             canvas.create_image(screen_middle, 0, image=photo, anchor='nw')
             root.update()
 
-    time.sleep(5)
+    time.sleep(4)
