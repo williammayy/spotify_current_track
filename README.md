@@ -4,6 +4,8 @@ Requirements:
   - Python 3 - sudo apt install python3
   - python3-pip - sudo apt install python3-pip
   - Spotipy - pip install spotipy --upgrade - Docs: https://spotipy.readthedocs.io/
+  - Pillow Library - pip install pillow --upgrade - To open images
+  - TK - sudo apt-get install python3-tk - create graphic interface
 
 Setup:
   export environment variables on terminal:
