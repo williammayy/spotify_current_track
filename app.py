@@ -21,14 +21,14 @@ screen_middle = ((screen_width/2) - (screen_height/2))
 root.attributes('-fullscreen', True)
 root.bind('<Escape>', lambda e: root.quit())
 
-default_image = Image.open('./images/black.jpg')
+default_image = Image.open('./images/black.png')
 default_image = default_image.resize((screen_height, screen_height), Image.Resampling.LANCZOS)
 
 #create PhotoImage object for image
 photo = ImageTk.PhotoImage(default_image)
 
 #create Canvas and show fullscreen image
-canvas = Canvas(root, width=screen_height, height=screen_height)
+canvas = Canvas(root, width=screen_height, height=screen_height, bg="black")
 canvas.pack(fill='both', expand=True)
 canvas.create_image(screen_middle, 0, image=photo, anchor='nw')
 root.config(cursor='none')
