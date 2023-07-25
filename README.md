@@ -5,6 +5,7 @@ Requirements:
   - python3-pip - sudo apt install python3-pip
   - Spotipy - pip install spotipy --upgrade - Docs: https://spotipy.readthedocs.io/
   - Pillow Library - pip install pillow --upgrade - To open images
+    if has errors: sudo apt install libjpeg-dev zlib1g-dev
   - TK - sudo apt-get install python3-tk - create graphic interface
 
 Setup:
