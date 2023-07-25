@@ -44,6 +44,7 @@ while True:
             canvas.create_image(screen_middle, 0, image=photo, anchor='nw')
             root.update()
     else:
+        print(results)
         current_song = results['item']['name']
         if previous_song != current_song:
             track = results['item']['name']
