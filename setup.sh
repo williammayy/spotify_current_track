@@ -27,13 +27,16 @@ echo "...done"
 echo "Creating spotict service:"
 sudo cp ./services/spotict.service /etc/systemd/system/
 sudo sed -i -e "/\[Service\]/a ExecStart=python3 ${install_path}/app.py < /dev/zero &> /dev/null &" /etc/systemd/system/spotict.service
-sudo mkdir /etc/systemd/system/spotict.service.d
-spotict_env_path=/etc/systemd/system/spotict.service.d/spotict_env.conf
-sudo touch $spotict_env_path
-sudo echo "[Service]" >> $spotict_env_path
-sudo echo "Environment=\"SPOTIPY_CLIENT_ID=${spotify_client_id}\"" >> $spotict_env_path
-sudo echo "Environment=\"SPOTIPY_CLIENT_SECRET=${spotify_client_secret}\"" >> $spotict_env_path
-sudo echo "Environment=\"SPOTIPY_REDIRECT_URI=${spotify_redirect_uri}\"" >> $spotict_env_path
+sudo sed -i -e "/\[Service\]/a Environment=\"SPOTIPY_REDIRECT_URI=${spotify_redirect_uri}\""
+sudo sed -i -e "/\[Service\]/a Environment=\"SPOTIPY_CLIENT_SECRET=${spotify_client_secret}\""
+sudo sed -i -e "/\[Service\]/a Environment=\"SPOTIPY_CLIENT_ID=${spotify_client_id}\""
+# sudo mkdir /etc/systemd/system/spotict.service.d
+# spotict_env_path=/etc/systemd/system/spotict.service.d/spotict_env.env
+# sudo touch $spotict_env_path
+# sudo echo "[Service]" >> $spotict_env_path
+# sudo echo "Environment=\"SPOTIPY_CLIENT_ID=${spotify_client_id}\"" >> $spotict_env_path
+# sudo echo "Environment=\"SPOTIPY_CLIENT_SECRET=${spotify_client_secret}\"" >> $spotict_env_path
+# sudo echo "Environment=\"SPOTIPY_REDIRECT_URI=${spotify_redirect_uri}\"" >> $spotict_env_path
 sudo systemctl daemon-reload
 sudo systemctl start spotict
 sudo systemctl enable spotict
