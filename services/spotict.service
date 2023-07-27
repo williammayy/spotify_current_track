@@ -2,6 +2,7 @@
 Description=spotict display cover art service
 
 [Service]
+ExecStartPre=/bin/sleep 60
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=spotict
