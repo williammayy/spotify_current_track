@@ -26,7 +26,7 @@ echo "...done"
 
 echo "Creating spotict service:"
 sudo cp ./services/spotict.service /etc/systemd/system/
-sudo sed -i -e "/\[Service\]/a ExecStart=python ${install_path}/python/app.py < /dev/zero &> /dev/null &" /etc/systemd/system/spotict.service
+sudo sed -i -e "/\[Service\]/a ExecStart=python3 ${install_path}/app.py < /dev/zero &> /dev/null &" /etc/systemd/system/spotict.service
 sudo mkdir /etc/systemd/system/spotict.service.d
 spotict_env_path=/etc/systemd/system/spotict.service.d/spotict_env.conf
 sudo touch $spotict_env_path
