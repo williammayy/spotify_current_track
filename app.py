@@ -2,11 +2,13 @@ import spotipy
 import time
 import requests
 import logging
+import os, sys
 from logging.handlers import RotatingFileHandler
 from PIL import Image, ImageTk
 from io import BytesIO
 from tkinter import Tk, Canvas
-from spotipy.oauth2 import SpotifyOAuth
+import spotipy.util as util
+# from spotipy.oauth2 import SpotifyOAuth
 
 # Configures logger for storing song data
 logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', filename='spotipy.log',level=logging.INFO)
@@ -21,7 +23,14 @@ scope = "user-read-playback-state"
 previous_song = ""
 current_song = ""
 
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
+directory = os.path.dirname(os.path.abspath(sys.argv[0]))
+
+token_path = directory + '/.cache'
+scope = 'user-read-currently-playing'
+token = util.prompt_for_user_token(scope, cache_path=token_path)
+sp = spotipy.Spotify(auth=token)
+
+# sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
 #create the fullscreen window
 root = Tk()
@@ -31,7 +40,8 @@ screen_middle = ((screen_width/2) - (screen_height/2))
 root.attributes('-fullscreen', True)
 root.bind('<Escape>', lambda e: root.quit())
 
-default_image = Image.open('./images/black.png')
+default_image_path = directory + '/images/black.png'
+default_image = Image.open(directory + '/images/black.png')
 default_image = default_image.resize((screen_height, screen_height), Image.Resampling.LANCZOS)
 
 #create PhotoImage object for image
