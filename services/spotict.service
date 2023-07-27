@@ -1,0 +1,14 @@
+[Unit]
+Description=spotict display cover art service
+
+[Service]
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=spotict
+LimitRTPRIO=99
+Restart=always
+RestartSec=3
+EnvironmentFile=/etc/systemd/system/spotict.service.d/spotict_env.conf
+
+[Install]
+WantedBy=multi-user.target
