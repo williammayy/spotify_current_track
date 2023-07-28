@@ -3,10 +3,9 @@ Description=spotict display cover art service
 After=graphical.target
 
 [Service]
-Type=simple
-ExecStartPre=/bin/sleep 30
-Environment="DISPLAY=:0"
 X11InitCheck=true
+Type=simple
+ExecStartPre=/bin/sleep 10
 SyslogIdentifier=spotict
 
 [Install]

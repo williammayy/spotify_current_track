@@ -33,6 +33,7 @@ sp = spotipy.Spotify(auth=token)
 # sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
 #create the fullscreen window
+os.environ['DISPLAY'] = ':0'
 display = os.environ.get('DISPLAY')
 print(display)
 root = Tk()
