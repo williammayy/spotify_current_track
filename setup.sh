@@ -30,7 +30,7 @@ sudo sed -i -e "/\[Service\]/a ExecStart=python3 ${install_path}/app.py < /dev/z
 sudo sed -i -e "/\[Service\]/a Environment=\"SPOTIPY_REDIRECT_URI=${spotify_redirect_uri}\"" /etc/systemd/system/spotict.service
 sudo sed -i -e "/\[Service\]/a Environment=\"SPOTIPY_CLIENT_SECRET=${spotify_client_secret}\"" /etc/systemd/system/spotict.service
 sudo sed -i -e "/\[Service\]/a Environment=\"SPOTIPY_CLIENT_ID=${spotify_client_id}\"" /etc/systemd/system/spotict.service
-sudo sed -i -e "/\[Service\]/a Environment=\"DISPLAY=:0\"" /etc/systemd/system/spotict.service
+# sudo sed -i -e "/\[Service\]/a Environment=\"DISPLAY=:0\"" /etc/systemd/system/spotict.service
 # sudo mkdir /etc/systemd/system/spotict.service.d
 # spotict_env_path=/etc/systemd/system/spotict.service.d/spotict_env.env
 # sudo touch $spotict_env_path
