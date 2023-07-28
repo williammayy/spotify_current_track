@@ -1,9 +1,10 @@
 [Unit]
 Description=spotict display cover art service
+After=display-manager.service
+Wants=display-manager.service
 
 [Service]
 Type=simple
-X11InitCheck=true
 ExecStartPre=/bin/sleep 60
 SyslogIdentifier=spotict
 
