@@ -1,11 +1,11 @@
 [Unit]
 Description=spotict display cover art service
-After=display-manager.service
-Wants=display-manager.service
+After=network.target x11-common.target
+Wants=x11-common.target
 
 [Service]
 Type=simple
-ExecStartPre=/bin/sleep 60
+ExecStartPre=/bin/sleep 10
 SyslogIdentifier=spotict
 
 [Install]
