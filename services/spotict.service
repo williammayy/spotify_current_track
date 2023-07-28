@@ -4,6 +4,7 @@ After=graphical.target
 
 [Service]
 Type=simple
+ExecStartPre=/bin/sleep 30
 Environment="DISPLAY=:0"
 X11InitCheck=true
 SyslogIdentifier=spotict
