@@ -34,7 +34,7 @@ sp = spotipy.Spotify(auth=token)
 
 #create the fullscreen window
 display = os.environ.get('DISPLAY')
-print(display)
+print(display, 'display')
 root = Tk()
 screen_height = root.winfo_screenheight()
 screen_width = root.winfo_screenwidth()
