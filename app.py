@@ -33,6 +33,8 @@ sp = spotipy.Spotify(auth=token)
 # sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
 #create the fullscreen window
+display = os.environ.get('DISPLAY')
+print(display)
 root = Tk()
 screen_height = root.winfo_screenheight()
 screen_width = root.winfo_screenwidth()
