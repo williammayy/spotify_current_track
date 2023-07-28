@@ -1,11 +1,11 @@
-echo "Installing libraries"
-sudo apt install libjpeg-dev zlib1g-dev
-sudo apt install python3-pip
-pip install spotipy --upgrade
-#  To open images
-pip install pillow --upgrade
-# Create graphic interface
-sudo apt-get install python3-tk
+# echo "Installing libraries"
+# sudo apt install libjpeg-dev zlib1g-dev
+# sudo apt install python3-pip
+# pip install spotipy --upgrade
+# #  To open images
+# pip install pillow --upgrade
+# # Create graphic interface
+# sudo apt-get install python3-tk
 
 echo "Enter your Spotify Client ID:"
 read spotify_client_id
