@@ -8,7 +8,6 @@ from PIL import Image, ImageTk
 from io import BytesIO
 from tkinter import Tk, Canvas
 import spotipy.util as util
-# from spotipy.oauth2 import SpotifyOAuth
 
 # Configures logger for storing song data
 logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', filename='spotipy.log',level=logging.INFO)
@@ -30,11 +29,7 @@ scope = 'user-read-currently-playing'
 token = util.prompt_for_user_token(scope, cache_path=token_path)
 sp = spotipy.Spotify(auth=token)
 
-# sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
-
 #create the fullscreen window
-display = os.environ.get('DISPLAY')
-print(display, 'display')
 root = Tk()
 screen_height = root.winfo_screenheight()
 screen_width = root.winfo_screenwidth()
