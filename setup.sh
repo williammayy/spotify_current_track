@@ -11,7 +11,7 @@ echo "Enter your Spotify Client ID:"
 read spotify_client_id
 
 echo "Enter your Spotify Client Secret:"
-read spotify_client_id
+read spotify_client_secret
 
 echo "Enter your Spotify Redirect URI:"
 read spotify_redirect_uri
