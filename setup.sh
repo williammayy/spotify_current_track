@@ -10,13 +10,13 @@ sudo apt-get install python3-tk
 echo "Enter your Spotify Client ID:"
 read spotify_client_id
 
-echo "Enter your system name:"
+echo "Enter your Spotify Client Secret:"
 read spotify_client_id
 
 echo "Enter your Spotify Redirect URI:"
 read spotify_redirect_uri
 
-echo "Enter your Spotify Client Secret:"
+echo "Enter your system name:"
 read user_name
 
 install_path=$(pwd)
