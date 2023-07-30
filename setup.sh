@@ -10,8 +10,11 @@ sudo apt-get install python3-tk
 echo "Enter your Spotify Client ID:"
 read spotify_client_id
 
+echo "Enter your system name:"
+read spotify_client_id
+
 echo "Enter your Spotify Client Secret:"
-read spotify_client_secret
+read user_name
 
 echo "Enter your Spotify Redirect URI:"
 read spotify_redirect_uri
@@ -30,7 +33,7 @@ sudo sed -i -e "/\[Service\]/a ExecStart=/usr/bin/python3 ${install_path}/app.py
 sudo sed -i -e "/\[Service\]/a Environment=\"SPOTIPY_REDIRECT_URI=${spotify_redirect_uri}\"" /etc/systemd/system/spotict.service
 sudo sed -i -e "/\[Service\]/a Environment=\"SPOTIPY_CLIENT_SECRET=${spotify_client_secret}\"" /etc/systemd/system/spotict.service
 sudo sed -i -e "/\[Service\]/a Environment=\"SPOTIPY_CLIENT_ID=${spotify_client_id}\"" /etc/systemd/system/spotict.service
-sudo sed -i -e "/\[Service\]/a User=${$USER}" /etc/systemd/system/spotict.service
+sudo sed -i -e "/\[Service\]/a User=${user_name}" /etc/systemd/system/spotict.service
 sudo systemctl daemon-reload
 sudo systemctl start spotict
 sudo systemctl enable spotict
