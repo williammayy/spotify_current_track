@@ -13,11 +13,11 @@ read spotify_client_id
 echo "Enter your system name:"
 read spotify_client_id
 
-echo "Enter your Spotify Client Secret:"
-read user_name
-
 echo "Enter your Spotify Redirect URI:"
 read spotify_redirect_uri
+
+echo "Enter your Spotify Client Secret:"
+read user_name
 
 install_path=$(pwd)
 
