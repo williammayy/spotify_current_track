@@ -57,21 +57,21 @@ while True:
         current_song = results['item']['name']
         if previous_song != current_song:
             track = results['item']['name']
-            album = results['item']['album']['name']
-            artists = results['item']['artists'][0]['name']
+            # album = results['item']['album']['name']
+            # artists = results['item']['artists'][0]['name']
             album_cover = results['item']['album']['images'][0]['url']
             previous_song = results['item']['name']
 
             response = requests.get(album_cover)
             canvas.delete("all")
             image = Image.open(BytesIO(response.content))
-            image_bg = image.resize((screen_height*2, screen_height*2), Image.Resampling.LANCZOS)
-            image_bg = image_bg.filter(ImageFilter.GaussianBlur(5))
-            photo_bg = ImageTk.PhotoImage(image_bg)
-            canvas.create_image(screen_width/2, screen_height/2, image=photo_bg, anchor='center')
+            # image_bg = image.resize((screen_height*2, screen_height*2), Image.Resampling.LANCZOS)
+            # image_bg = image_bg.filter(ImageFilter.GaussianBlur(5))
+            # photo_bg = ImageTk.PhotoImage(image_bg)
+            # canvas.create_image(screen_width/2, screen_height/2, image=photo_bg, anchor='center')
             image = image.resize((screen_height, screen_height), Image.Resampling.LANCZOS)
             photo = ImageTk.PhotoImage(image)
             canvas.create_image(screen_middle, 0, image=photo, anchor='nw')
             root.update()
 
-    time.sleep(4)
+    time.sleep(1)

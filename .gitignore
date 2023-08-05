@@ -1,3 +1,5 @@
 .cache
 credentials.txt
 spotipy.log
+.cache-will
+teste

@@ -6,7 +6,7 @@ StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=spotipi
 Environment="DISPLAY=:0"
-ExecStartPre=/bin/sleep 15
+ExecStartPre=/bin/sleep 60
 
 [Install]
 WantedBy=multi-user.target
